@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>RouteEmailsToSlack</id>
+    <version>1.0.0</version>
+    <authors>Shiran Ginige</authors>
+    <owners>Shiran Ginige</owners>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Ever wanted to have multiple inboxes for test in dev and test enviornments? Here is an alternative, send them all to slack! ( Because, why not!) </description>
+    <tags>FakeInbox </tags>
+     <dependencies>
+      <dependency id="Newtonsoft.Json" version="8.0.3" />
+	
+	</dependencies> 
+  </metadata>
+</package>
