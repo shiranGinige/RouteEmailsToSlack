@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace RouteEmailsToSlack
+namespace Klabs.RouteEmailsToSlack
 {
     public class Payload
     {
