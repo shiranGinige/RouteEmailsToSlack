@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Klabs.RouteEmailsToSlack
@@ -27,10 +28,24 @@ namespace Klabs.RouteEmailsToSlack
 
             var client = new SlackClient(_urlWithAccessToken);
 
+            string lineBreak =  "----------------------------------------------";
+            String messageStartEnd = "==============================================";
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(messageStartEnd);
+            sb.AppendLine($"To :  {toName} ({toEmail})");
+            sb.AppendLine(lineBreak);
+
+            sb.AppendLine($"Subject : {subject}");
+            sb.AppendLine(lineBreak);
+
+            sb.AppendLine(body);
+
+            sb.AppendLine(messageStartEnd);
+
             await Task.Run(() =>
             {
                 client.PostMessage(username: $"{toName} ({toEmail})",
-                    text: $"{subject} \r\n {body}",
+                    text: sb.ToString(),
                     channel: _channelName);
             });
         }
