@@ -8,8 +8,10 @@ How to?
 1. Create a slack channel to receive emails
    https://get.slack.help/hc/en-us/articles/201402297-Creating-a-channel
 
+2. Create a incoming web-hook for the channel 
+   https://api.slack.com/incoming-webhooks
 
-2. Say you have configured your email addresses with test.com domain in dev and test and inside 
+3. Say you have configured your email addresses with test.com domain in dev and test and inside 
    the email delivery method you can do something like below..  
 
       
@@ -19,7 +21,7 @@ How to?
 	{
 		if(receiverEmail.EndsWith('test.com'))
 		{
-			var slackEmailRouter = new SlackEmailRouter("your url with access token" , "your channel name");
+			var slackEmailRouter = new SlackEmailRouter("https://your/web-hook/url" , "#your-channel-name");
 			slackEmailRouter.Send(receiverName,receiverEmail,subject,body);
 		 }
 		else
